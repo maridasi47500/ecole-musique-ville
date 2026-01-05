@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Scores" %>
+<p>Ecole de musique de ma ville, toutes les partitions</p>
+
+<h1>Scores</h1>
+
+<div id="scores">
+  <% @scores.each do |score| %>
+    <p>
+<%=score.title%> by <%=score.composer%>
+      <%= link_to "Show this score", score %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New score", new_score_path %>
